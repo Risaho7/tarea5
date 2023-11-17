@@ -1,23 +1,24 @@
-name: Python CI
+name: Python CI  # Nombre del flujo de trabajo
 
 on:
   push:
-    branches: [main] # Cambia "main" si tu rama principal tiene otro nombre.
+    branches: [main]  # Desencadenar acciones en la rama principal al hacer un push
   pull_request:
-    branches: [main]
+    branches: [main]  # Desencadenar acciones en la rama principal cuando se abre un pull request
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    runs-on: ubuntu-latest  # Entorno de ejecución: Ubuntu más reciente
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+    steps:  # Pasos a seguir en el flujo de trabajo
+      - name: Checkout repository  # Nombre del paso: 'Checkout repository'
+        uses: actions/checkout@v2  # Usa la acción de checkout de GitHub
+
+      - name: Set up Python  # Nombre del paso: 'Set up Python'
+        uses: actions/setup-python@v2  # Usa la acción para configurar Python
         with:
-          python-version: 3.8
+          python-version: 3.8  # Versión de Python a configurar
 
-      - name: Run tests
-        run: |
-          python -m unittest test_funcionesMatematicas.py
+      - name: Run tests  # Nombre del paso: 'Run tests'
+        run: python -m unittest test_funcionesMatematicas.py  # Comando para ejecutar las pruebas unitarias
+        # Ejecuta las pruebas unitarias del archivo test_funcionesMatematicas.py usando el módulo unittest de Python
