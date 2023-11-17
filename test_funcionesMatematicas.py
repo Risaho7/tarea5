@@ -1,7 +1,7 @@
 import unittest
 from funcionesMatematicas import sumar, restar, multiplicar, dividir
 
-#clase que recoge las pruebas unitarias
+# Clase que recoge las pruebas unitarias
 class testFunciones(unittest.TestCase):
 
     def test_sumar(self):    # Pruebas para la función de suma
